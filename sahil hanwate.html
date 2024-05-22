@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Showroom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/premium-photo/abstract-blur-car-showroom-background_34836-261.jpg?w=2000');
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .car-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .car {
+            width: 200px;
+            margin-bottom: 30px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .car img {
+            width: 100%;
+            height: auto;
+        }
+
+        .car-details {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .car-details.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Showroom</h1>
+        <div class="car-list">
+            <div class="car" id="car1" onclick="showDetails('car1')">
+                <img src="https://wallup.net/wp-content/uploads/2017/11/23/498455-car-Super_Car-lykan_hypersport-red_cars-side_view.jpg" alt="Car 1">
+                <h2>Car 1</h2>
+                <p>Model: Model X</p>
+                <p>Year: 2023</p>
+                <p>Color: Black</p>
+                <p>Price: $50,000</p>
+            </div>
+            <div class="car" id="car2" onclick="showDetails('car2')">
+                <img src="https://www.freeiconspng.com/uploads/land-rover-range-rover-car-png-25.png" alt="Car 2">
+                <h2>Car 2</h2>
+                <p>Model: Model Y</p>
+                <p>Year: 2024</p>
+                <p>Color: White</p>
+                <p>Price: $60,000</p>
+            </div>
+        </div>
+        <div class="car-details" id="car-details">
+            <!-- Car details will be displayed here dynamically -->
+        </div>
+    </div>
+
+    <script>
+        function showDetails(carId) {
+            var carDetails = document.getElementById(carId).innerHTML;
+            document.getElementById('car-details').innerHTML = carDetails;
+            document.getElementById('car-details').classList.add('active');
+        }
+    </script>
+</body>
+</html>
